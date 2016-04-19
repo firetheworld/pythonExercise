@@ -11,5 +11,5 @@ from myFunction import *
 # print(findMax(numberList))
 
 
-name = input('Pls input your name: ')
+name = input('Please input your name: ')
 print('hello, ',name)
