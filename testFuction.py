@@ -65,3 +65,29 @@ from functools import reduce
 #         print(n)
 #     else:
 #         break
+
+
+# #返回函数
+# def lazy_sum(*args):
+#     def sum():
+#         sumNum = 0
+#         for n in args:
+#             sumNum = sumNum + n
+#         return sumNum
+#
+#     return sum
+#
+# f = lazy_sum(1,2,3)
+# print(f())
+
+#装饰器
+
+def log(func):
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return  func(*args, **kw)
+    return wrapper
+
+@log
+def now():
+    print('2016-05-08')
