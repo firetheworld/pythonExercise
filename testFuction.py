@@ -20,17 +20,48 @@ from functools import reduce
 # print(list(r))
 
 
-def add(x, y):
-    return x * 10 + y
+# def add(x, y):
+#     return x * 10 + y
+#
+# r = reduce(add, [1, 2 ,3])
+# print(r)
+#
+# def str2int(s):
+#     def fn(x, y):
+#         return x * 10 + y
+#     def char2num(s):
+#         return {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}[s]
+#     return reduce(fn, map(char2num, s))
+#
+# print(str2int('123456'))
 
-r = reduce(add, [1, 2 ,3])
-print(r)
 
-def str2int(s):
-    def fn(x, y):
-        return x * 10 + y
-    def char2num(s):
-        return {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}[s]
-    return reduce(fn, map(char2num, s))
-
-print(str2int('123456'))
+# #filter
+# def is_odd(n):
+#     return n % 2 == 1
+#
+# l = list(filter(is_odd, [1, 2, 3, 4, 5, 6]))
+# print(l)
+#
+# def _odd_iter():
+#     n = 1
+#     while True:
+#         n = n + 2
+#         yield n
+#
+# def _not_divisible(n):
+#     return lambda x: x % n > 0
+#
+# def primes():
+#     yield 2
+#     it = _odd_iter()
+#     while True:
+#         n = next(it)
+#         yield n
+#         it = filter(_not_divisible(n), it)
+#
+# for n in primes():
+#     if n < 1000:
+#         print(n)
+#     else:
+#         break
