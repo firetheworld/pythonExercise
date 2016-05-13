@@ -110,6 +110,17 @@ class Student(object):
         else:
             return 'C'
 
+    @property
+    def gender(self):
+        return self._gender
+
+    @gender.setter
+    def gender(self, value):
+        if value == 'female' or value == 'male':
+            self._gender = value
+        else:
+            raise ValueError('Must Female or Male')
+
 bart = Student('Bart Simpson', 59)
 lisa = Student('Lisa Simpson', 87)
 
@@ -119,3 +130,8 @@ bart.print_score()
 
 print('grade of Bart:', bart.get_grade())
 print('grade of Lisa:', lisa.get_grade())
+
+lisa.gender = 'female'
+bart.gender = 'asd'
+print(lisa.gender)
+print(bart.gender)
